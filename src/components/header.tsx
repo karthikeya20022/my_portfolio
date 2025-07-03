@@ -60,8 +60,8 @@ const Header = () => {
       <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-md">
         <Database className="h-6 w-6" />
       </div>
-      <span className="text-2xl font-bold tracking-tight text-primary">
-        A.K. Gupta
+      <span className="text-xl font-semibold tracking-wide text-foreground">
+        Karthikeya Gupta
       </span>
     </a>
   );
