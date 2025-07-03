@@ -11,11 +11,8 @@ import {
   SendEmailInputSchema,
   type SendEmailInput,
 } from '@/ai/schemas/send-email-schema';
+import {Resend} from 'resend';
 
-// This flow currently only logs the data to the console.
-// To send an actual email, you would integrate an email service provider
-// like Resend, SendGrid, or Nodemailer here. This typically requires
-// an API key which should be stored securely as an environment variable.
 const sendEmailFlow = ai.defineFlow(
   {
     name: 'sendEmailFlow',
@@ -23,23 +20,23 @@ const sendEmailFlow = ai.defineFlow(
     outputSchema: z.object({success: z.boolean(), message: z.string()}),
   },
   async (input) => {
-    console.log('Received contact form submission:');
-    console.log('Name:', input.name);
-    console.log('Email:', input.email);
-    console.log('Subject:', input.subject);
-    console.log('Message:', input.message);
+    if (!process.env.RESEND_API_KEY) {
+      console.error(
+        'RESEND_API_KEY is not set. Please set it in your .env.local file.'
+      );
+      return {
+        success: false,
+        message:
+          'Server configuration error. Could not send email at this time.',
+      };
+    }
 
-    // To send an email, you can use a service like Resend.
-    // 1. Add the package: `npm install resend`
-    // 2. Get an API key from https://resend.com
-    // 3. Store the key in a .env.local file: `RESEND_API_KEY=your_key_here`
-    // 4. Uncomment and adapt the code below.
-    /*
     try {
       const resend = new Resend(process.env.RESEND_API_KEY);
       await resend.emails.send({
-        from: 'Portfolio <onboarding@resend.dev>', // Must be a verified domain
+        from: 'Portfolio <onboarding@resend.dev>', // This must be a verified domain in Resend
         to: 'karthikeyagupta93@gmail.com',
+        reply_to: input.email,
         subject: `New message from ${input.name}: ${input.subject}`,
         html: `
           <p>You have a new message from your portfolio contact form.</p>
@@ -49,14 +46,11 @@ const sendEmailFlow = ai.defineFlow(
           <p>${input.message}</p>
         `,
       });
-      return { success: true, message: 'Email sent successfully.' };
+      return {success: true, message: 'Email sent successfully.'};
     } catch (error) {
       console.error('Failed to send email:', error);
-      return { success: false, message: 'Failed to send email.' };
+      return {success: false, message: 'Failed to send email.'};
     }
-    */
-
-    return {success: true, message: 'Form submitted successfully.'};
   }
 );
 
