@@ -72,11 +72,10 @@ const HeroSection = () => {
           <div className="flex justify-center lg:col-span-2">
             <div className="relative h-64 w-64 overflow-hidden rounded-full border-4 border-primary shadow-2xl sm:h-80 sm:w-80">
               <Image
-                src="https://placehold.co/320x320.png"
+                src="/images/profile.png"
                 alt="Arvapalli Karthikeya Gupta"
                 fill
                 className="object-cover"
-                data-ai-hint="man portrait"
               />
             </div>
           </div>
