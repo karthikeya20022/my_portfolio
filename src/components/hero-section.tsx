@@ -71,7 +71,7 @@ const HeroSection = () => {
                 </Button>
               </a>
               <a
-                href="/resume.pdf"
+                href="/Arvapalli_Karthikeya_Gupta_Resume.pdf"
                 download="Arvapalli_Karthikeya_Gupta_Resume.pdf"
               >
                 <Button
