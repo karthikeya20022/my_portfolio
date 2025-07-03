@@ -39,7 +39,7 @@ const ProjectsSection = () => {
               className="flex flex-col transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
             >
               <CardHeader>
-                <CardTitle className="text-2xl text-primary">
+                <CardTitle className="text-xl md:text-2xl text-primary">
                   {project.title}
                 </CardTitle>
                 <CardDescription>{project.description}</CardDescription>

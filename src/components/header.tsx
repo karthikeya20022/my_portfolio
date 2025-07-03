@@ -44,7 +44,7 @@ const Header = () => {
       onClick={() => isMobile && setMobileMenuOpen(false)}
       className={cn(
         'font-medium transition-colors hover:text-accent',
-        isMobile ? 'block p-4 text-lg' : 'p-2'
+        isMobile ? 'block p-4 text-base' : 'p-2'
       )}
     >
       {label}

@@ -18,7 +18,7 @@ const HeroSection = () => {
             <h1 className="text-4xl font-extrabold tracking-tight font-headline text-primary sm:text-5xl md:text-6xl">
               Arvapalli Karthikeya Gupta
             </h1>
-            <p className="mt-6 max-w-2xl text-lg text-foreground lg:mx-0">
+            <p className="mt-6 max-w-2xl text-base md:text-lg text-foreground lg:mx-0">
               Transforming Data into Insights & Building Scalable Database Solutions
             </p>
             <p className="mt-4 max-w-2xl text-muted-foreground lg:mx-0">

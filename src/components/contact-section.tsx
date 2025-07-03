@@ -65,7 +65,7 @@ const ContactSection = () => {
           <div className="space-y-8">
             <h3 className="text-2xl font-semibold text-primary">Contact Information</h3>
             <Card className="p-6">
-              <ul className="space-y-4 text-lg">
+              <ul className="space-y-4 text-base md:text-lg">
                 <li className="flex items-center gap-4">
                   <Mail className="h-6 w-6 text-accent" />
                   <a

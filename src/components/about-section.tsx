@@ -10,7 +10,7 @@ const AboutSection = () => {
               About Me
             </CardTitle>
           </CardHeader>
-          <CardContent className="text-lg text-center text-card-foreground space-y-4">
+          <CardContent className="text-base md:text-lg text-center text-card-foreground space-y-4">
             <p>
               A dedicated and results-oriented professional with a strong
               foundation in database management, SQL querying, and data
