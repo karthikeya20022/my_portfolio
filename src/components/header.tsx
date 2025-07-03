@@ -51,6 +51,21 @@ const Header = () => {
     </a>
   );
 
+  const Logo = ({ isMobile = false }: { isMobile?: boolean }) => (
+    <a
+      href="#home"
+      className="flex items-center gap-3 transition-transform duration-300 ease-in-out hover:scale-105"
+      onClick={() => isMobile && setMobileMenuOpen(false)}
+    >
+      <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-md">
+        <Database className="h-6 w-6" />
+      </div>
+      <span className="text-2xl font-bold tracking-tight text-primary">
+        A.K. Gupta
+      </span>
+    </a>
+  );
+
   return (
     <header
       className={cn(
@@ -61,12 +76,7 @@ const Header = () => {
       )}
     >
       <div className="container mx-auto flex h-20 items-center justify-between px-4">
-        <a href="#home" className="flex items-center gap-2">
-          <Database className="h-8 w-8 text-primary" />
-          <span className="text-xl font-bold font-headline text-primary">
-            A.K. Gupta
-          </span>
-        </a>
+        <Logo />
 
         <nav className="hidden items-center gap-4 md:flex">
           {navLinks.map((link) => (
@@ -85,12 +95,7 @@ const Header = () => {
             <SheetContent side="right" className="w-[280px]">
               <div className="p-6">
                 <div className="mb-8 flex items-center justify-between">
-                   <a href="#home" className="flex items-center gap-2" onClick={() => setMobileMenuOpen(false)}>
-                      <Database className="h-8 w-8 text-primary" />
-                      <span className="text-xl font-bold font-headline text-primary">
-                        A.K. Gupta
-                      </span>
-                    </a>
+                  <Logo isMobile />
                   <ThemeToggle />
                 </div>
                 <nav className="flex flex-col gap-4">
