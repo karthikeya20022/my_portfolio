@@ -1,0 +1,39 @@
+'use client';
+
+import { Linkedin, Github } from 'lucide-react';
+import { Button } from './ui/button';
+
+const Footer = () => {
+  return (
+    <footer className="bg-secondary py-6">
+      <div className="container mx-auto px-4 text-center text-muted-foreground">
+        <div className="flex justify-center gap-4 mb-4">
+          <a
+            href="https://www.linkedin.com/in/arvapalli-karthikeya-gupta"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Button variant="ghost" size="icon">
+              <Linkedin className="h-5 w-5" />
+            </Button>
+          </a>
+          <a
+            href="https://github.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Button variant="ghost" size="icon">
+              <Github className="h-5 w-5" />
+            </Button>
+          </a>
+        </div>
+        <p>
+          &copy; {new Date().getFullYear()} Arvapalli Karthikeya Gupta. All
+          Rights Reserved.
+        </p>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;
