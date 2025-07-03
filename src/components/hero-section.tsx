@@ -7,7 +7,7 @@ const HeroSection = () => {
   return (
     <section
       id="home"
-      className="relative flex min-h-[calc(100vh-80px)] w-full items-center justify-center bg-secondary py-20"
+      className="relative flex min-h-[calc(100vh-80px)] w-full items-center justify-center bg-secondary py-16 md:py-20"
     >
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-5">
@@ -19,7 +19,7 @@ const HeroSection = () => {
               Aspiring SQL Developer | Data Analyst | Technical Support
               Specialist
             </Badge>
-            <h1 className="text-4xl font-extrabold tracking-tight font-headline text-primary sm:text-5xl md:text-6xl">
+            <h1 className="text-4xl font-extrabold tracking-tight font-headline text-primary sm:text-5xl md:text-6xl lg:text-5xl xl:text-6xl">
               Arvapalli Karthikeya Gupta
             </h1>
             <p className="mt-6 max-w-2xl text-base text-foreground lg:mx-0 md:text-lg">
@@ -72,7 +72,7 @@ const HeroSection = () => {
           <div className="flex justify-center lg:col-span-2">
             <div className="relative h-64 w-64 overflow-hidden rounded-full border-4 border-primary shadow-2xl sm:h-80 sm:w-80">
               <Image
-                src="https://placehold.co/320x320.png"
+                src="/karthikeya-profile.jpg"
                 alt="Arvapalli Karthikeya Gupta"
                 fill
                 className="object-cover"
