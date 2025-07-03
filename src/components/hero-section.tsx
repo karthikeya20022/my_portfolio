@@ -56,11 +56,10 @@ const HeroSection = () => {
           <div className="lg:col-span-2 flex justify-center">
             <div className="relative h-64 w-64 sm:h-80 sm:w-80 rounded-full overflow-hidden shadow-2xl border-4 border-primary">
                <Image
-                src="https://placehold.co/400x400.png"
+                src="/hero-image.jpeg"
                 alt="Arvapalli Karthikeya Gupta"
                 layout="fill"
                 objectFit="cover"
-                data-ai-hint="professional portrait"
               />
             </div>
           </div>
