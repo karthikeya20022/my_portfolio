@@ -1,5 +1,8 @@
+'use client';
+
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Briefcase } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const experiences = [
   {
@@ -20,24 +23,44 @@ const experiences = [
 
 const ExperienceSection = () => {
   return (
-    <section id="experience" className="py-16 md:py-24">
+    <section id="experience" className="py-16 md:py-24 overflow-hidden">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl md:text-4xl font-headline text-center mb-12 text-primary">
+        <motion.h2
+          initial={{ opacity: 0, y: -50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.5 }}
+          transition={{ duration: 0.5 }}
+          className="text-3xl md:text-4xl font-headline text-center mb-12 text-primary"
+        >
           Professional Experience
-        </h2>
+        </motion.h2>
         <div className="relative max-w-4xl mx-auto">
           <div className="absolute left-1/2 top-0 bottom-0 w-0.5 bg-border -translate-x-1/2 hidden md:block"></div>
           {experiences.map((exp, index) => (
-            <div
+            <motion.div
               key={index}
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.5 }}
+              transition={{
+                duration: 0.6,
+                ease: 'easeOut',
+                delay: index * 0.2,
+              }}
               className={`mb-8 flex justify-between items-center w-full ${
                 index % 2 === 0 ? 'md:flex-row-reverse' : ''
               }`}
             >
               <div className="order-1 w-5/12 hidden md:block"></div>
-              <div className="z-20 flex items-center order-1 bg-primary shadow-xl w-12 h-12 rounded-full">
+              <motion.div
+                initial={{ scale: 0 }}
+                whileInView={{ scale: 1 }}
+                viewport={{ once: true, amount: 0.5 }}
+                transition={{ duration: 0.4, delay: 0.2 + index * 0.2 }}
+                className="z-20 flex items-center order-1 bg-primary shadow-xl w-12 h-12 rounded-full"
+              >
                 <Briefcase className="mx-auto text-primary-foreground" />
-              </div>
+              </motion.div>
               <div className="order-1 w-full md:w-5/12">
                 <Card className="shadow-lg">
                   <CardHeader>
@@ -45,14 +68,16 @@ const ExperienceSection = () => {
                       {exp.role}
                     </CardTitle>
                     <p className="font-semibold text-accent">{exp.company}</p>
-                    <p className="text-sm text-muted-foreground">{exp.period}</p>
+                    <p className="text-sm text-muted-foreground">
+                      {exp.period}
+                    </p>
                   </CardHeader>
                   <CardContent>
                     <p>{exp.description}</p>
                   </CardContent>
                 </Card>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

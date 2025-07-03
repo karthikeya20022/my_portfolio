@@ -17,6 +17,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/hooks/use-toast';
 import { Card, CardContent } from '@/components/ui/card';
 import { Mail, Phone, MapPin, Linkedin } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const formSchema = z.object({
   name: z.string().min(2, {
@@ -56,14 +57,28 @@ const ContactSection = () => {
   }
 
   return (
-    <section id="contact" className="py-16 md:py-24">
+    <section id="contact" className="py-16 md:py-24 overflow-hidden">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl md:text-4xl font-headline text-center mb-12 text-primary">
+        <motion.h2
+          initial={{ opacity: 0, y: -50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.5 }}
+          transition={{ duration: 0.5 }}
+          className="text-3xl md:text-4xl font-headline text-center mb-12 text-primary"
+        >
           Get In Touch
-        </h2>
+        </motion.h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-          <div className="space-y-8">
-            <h3 className="text-2xl font-semibold text-primary">Contact Information</h3>
+          <motion.div
+            initial={{ opacity: 0, x: -100 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.7, ease: 'easeOut' }}
+            className="space-y-8"
+          >
+            <h3 className="text-2xl font-semibold text-primary">
+              Contact Information
+            </h3>
             <Card className="p-6">
               <ul className="space-y-4 text-base md:text-lg">
                 <li className="flex items-center gap-4">
@@ -96,76 +111,86 @@ const ContactSection = () => {
                 </li>
               </ul>
             </Card>
-          </div>
+          </motion.div>
 
-          <Card className="p-6 shadow-lg">
-            <Form {...form}>
-              <form
-                onSubmit={form.handleSubmit(onSubmit)}
-                className="space-y-6"
-              >
-                <FormField
-                  control={form.control}
-                  name="name"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Name</FormLabel>
-                      <FormControl>
-                        <Input placeholder="Your Name" {...field} />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-                <FormField
-                  control={form.control}
-                  name="email"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Email</FormLabel>
-                      <FormControl>
-                        <Input placeholder="your.email@example.com" {...field} />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-                <FormField
-                  control={form.control}
-                  name="subject"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Subject</FormLabel>
-                      <FormControl>
-                        <Input placeholder="Regarding..." {...field} />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-                <FormField
-                  control={form.control}
-                  name="message"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Message</FormLabel>
-                      <FormControl>
-                        <Textarea
-                          placeholder="Your message here..."
-                          className="min-h-[120px]"
-                          {...field}
-                        />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-                <Button type="submit" className="w-full" variant="default">
-                  Send Message
-                </Button>
-              </form>
-            </Form>
-          </Card>
+          <motion.div
+            initial={{ opacity: 0, x: 100 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.7, ease: 'easeOut' }}
+          >
+            <Card className="p-6 shadow-lg">
+              <Form {...form}>
+                <form
+                  onSubmit={form.handleSubmit(onSubmit)}
+                  className="space-y-6"
+                >
+                  <FormField
+                    control={form.control}
+                    name="name"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Name</FormLabel>
+                        <FormControl>
+                          <Input placeholder="Your Name" {...field} />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                  <FormField
+                    control={form.control}
+                    name="email"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Email</FormLabel>
+                        <FormControl>
+                          <Input
+                            placeholder="your.email@example.com"
+                            {...field}
+                          />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                  <FormField
+                    control={form.control}
+                    name="subject"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Subject</FormLabel>
+                        <FormControl>
+                          <Input placeholder="Regarding..." {...field} />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                  <FormField
+                    control={form.control}
+                    name="message"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Message</FormLabel>
+                        <FormControl>
+                          <Textarea
+                            placeholder="Your message here..."
+                            className="min-h-[120px]"
+                            {...field}
+                          />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                  <Button type="submit" className="w-full" variant="default">
+                    Send Message
+                  </Button>
+                </form>
+              </Form>
+            </Card>
+          </motion.div>
         </div>
       </div>
     </section>
