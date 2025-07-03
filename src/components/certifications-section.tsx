@@ -9,32 +9,38 @@ const certifications = [
     icon: <BarChart className="h-8 w-8 text-accent" />,
     title: 'Excel (Coursera)',
     date: 'Sep 2022',
+    url: '#',
   },
   {
     icon: <Database className="h-8 w-8 text-accent" />,
     title: 'MySQL (Ebox)',
     date: 'Jun 2022',
+    url: '#',
   },
   {
     icon: <BarChart className="h-8 w-8 text-accent" />,
     title: 'Data Visualization with Tableau',
     date: 'Apr 2023',
     issuer: 'Coursera',
+    url: '#',
   },
   {
     icon: <Rss className="h-8 w-8 text-accent" />, // Placeholder for R
     title: 'R Programming (Coursera)',
     date: 'Apr 2023',
+    url: '#',
   },
   {
     icon: <Tv className="h-8 w-8 text-accent" />,
     title: 'Power BI (Simplilearn)',
     date: 'Aug 2023',
+    url: '#',
   },
   {
     icon: <PanelTop className="h-8 w-8 text-accent" />,
     title: 'cPanel UI Proficiency (cPanel)',
     date: 'Jan 2025',
+    url: '#',
   },
 ];
 
@@ -81,18 +87,25 @@ const CertificationsSection = () => {
         >
           {certifications.map((cert, index) => (
             <motion.div key={index} variants={itemVariants}>
-              <Card className="text-center transition-transform transform hover:scale-105 hover:shadow-xl h-full">
-                <CardHeader>
-                  <div className="flex justify-center mb-4">{cert.icon}</div>
-                  <CardTitle className="text-xl font-semibold text-card-foreground">
-                    {cert.title}
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground">{cert.issuer}</p>
-                  <p className="text-muted-foreground">{cert.date}</p>
-                </CardContent>
-              </Card>
+              <a
+                href={cert.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block h-full"
+              >
+                <Card className="text-center transition-transform transform hover:scale-105 hover:shadow-xl h-full">
+                  <CardHeader>
+                    <div className="flex justify-center mb-4">{cert.icon}</div>
+                    <CardTitle className="text-xl font-semibold text-card-foreground">
+                      {cert.title}
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-muted-foreground">{cert.issuer}</p>
+                    <p className="text-muted-foreground">{cert.date}</p>
+                  </CardContent>
+                </Card>
+              </a>
             </motion.div>
           ))}
         </motion.div>
