@@ -16,7 +16,7 @@ const Footer = () => {
       <div className="container mx-auto px-4 text-center text-muted-foreground">
         <div className="flex justify-center gap-4 mb-4">
           <a
-            href="https://www.linkedin.com/in/arvapalli-karthikeya-gupta"
+            href="https://www.linkedin.com/in/arvapalli-karthikeya-gupta-b9803b1b7"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -25,7 +25,7 @@ const Footer = () => {
             </Button>
           </a>
           <a
-            href="https://github.com/"
+            href="https://github.com/karthikeya20022"
             target="_blank"
             rel="noopener noreferrer"
           >
