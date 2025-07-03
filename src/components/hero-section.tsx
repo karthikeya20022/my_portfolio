@@ -71,8 +71,8 @@ const HeroSection = () => {
                 </Button>
               </a>
               <a
-                href="/Arvapalli_Karthikeya_Gupta_Resume.pdf"
-                download="Arvapalli_Karthikeya_Gupta_Resume.pdf"
+                href="/Karthikeya_Gupta.pdf"
+                download="Karthikeya_Gupta.pdf"
               >
                 <Button
                   size="lg"
@@ -111,7 +111,7 @@ const HeroSection = () => {
           >
             <div className="relative h-64 w-64 overflow-hidden rounded-full border-4 border-primary shadow-2xl sm:h-80 sm:w-80">
               <Image
-                src="/images/profile.png"
+                src="/images/profiles.png"
                 alt="Arvapalli Karthikeya Gupta"
                 fill
                 className="object-cover"
