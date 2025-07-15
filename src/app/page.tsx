@@ -8,22 +8,26 @@ import CertificationsSection from '@/components/certifications-section';
 import ContactSection from '@/components/contact-section';
 import Footer from '@/components/footer';
 import EducationSection from '@/components/education-section';
+import BackgroundAnimation from '@/components/background-animation';
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen flex-col bg-background font-body text-foreground">
-      <Header />
-      <main className="flex-1">
-        <HeroSection />
-        <AboutSection />
-        <SkillsSection />
-        <ExperienceSection />
-        <ProjectsSection />
-        <EducationSection />
-        <CertificationsSection />
-        <ContactSection />
-      </main>
-      <Footer />
+    <div className="relative flex min-h-screen flex-col bg-background font-body text-foreground">
+      <BackgroundAnimation />
+      <div className="relative z-10">
+        <Header />
+        <main className="flex-1">
+          <HeroSection />
+          <AboutSection />
+          <SkillsSection />
+          <ExperienceSection />
+          <ProjectsSection />
+          <EducationSection />
+          <CertificationsSection />
+          <ContactSection />
+        </main>
+        <Footer />
+      </div>
     </div>
   );
 }
