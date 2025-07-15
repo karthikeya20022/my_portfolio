@@ -79,7 +79,7 @@ const HeroSection = () => {
                 </Button>
               </a>
               <a
-                href="/Arvapalli_Karthikeya_Gupta_Resume.pdf"
+                href="/Karthikeya_Gupta.pdf"
                 download="Karthikeya_Gupta.pdf"
               >
                 <Button
@@ -117,13 +117,16 @@ const HeroSection = () => {
             transition={{ duration: 0.7, delay: 0.5, ease: 'easeOut' }}
             className="flex justify-center lg:col-span-2"
           >
-            <div className="relative h-64 w-64 overflow-hidden rounded-full border-4 border-primary shadow-2xl sm:h-80 sm:w-80">
-              <Image
-                src="/images/profiles.png"
-                alt="Arvapalli Karthikeya Gupta"
-                fill
-                className="object-cover"
-              />
+            <div className="group relative">
+              <div className="absolute -inset-1 rounded-full bg-primary opacity-25 blur-xl transition duration-500 group-hover:opacity-50 animate-pulse-slow"></div>
+              <div className="relative h-64 w-64 overflow-hidden rounded-full border-4 border-primary/80 shadow-2xl transition-transform duration-300 group-hover:scale-105 sm:h-80 sm:w-80">
+                <Image
+                  src="/images/profiles.png"
+                  alt="Arvapalli Karthikeya Gupta"
+                  fill
+                  className="object-cover"
+                />
+              </div>
             </div>
           </motion.div>
         </div>
