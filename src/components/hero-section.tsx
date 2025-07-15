@@ -3,8 +3,8 @@
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Mail, Phone, MapPin } from 'lucide-react';
-import { Badge } from '@/components/ui/badge';
 import { motion } from 'framer-motion';
+import { TypeAnimation } from 'react-type-animation';
 
 const HeroSection = () => {
   return (
@@ -19,14 +19,22 @@ const HeroSection = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
+              className="mb-4 h-6"
             >
-              <Badge
-                variant="outline"
-                className="mb-4 border-primary text-primary"
-              >
-                Aspiring SQL Developer | Data Analyst | Technical Support
-                Specialist
-              </Badge>
+              <TypeAnimation
+                sequence={[
+                  'Aspiring SQL Developer',
+                  1500,
+                  'Data Analyst',
+                  1500,
+                  'Technical Support Specialist',
+                  1500,
+                ]}
+                wrapper="span"
+                speed={50}
+                className="text-lg font-semibold text-primary"
+                repeat={Infinity}
+              />
             </motion.div>
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
@@ -71,7 +79,7 @@ const HeroSection = () => {
                 </Button>
               </a>
               <a
-                href="/Karthikeya_Gupta.pdf"
+                href="/Arvapalli_Karthikeya_Gupta_Resume.pdf"
                 download="Karthikeya_Gupta.pdf"
               >
                 <Button
