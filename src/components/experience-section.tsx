@@ -6,8 +6,8 @@ import { motion } from 'framer-motion';
 
 const experiences = [
   {
-    role: 'Junior Support Engineer',
-    company: 'Glowtouch Technologies',
+    role: 'Junior Associate - Operations',
+    company: 'UnifyCX',
     period: 'Nov 2024 - Present',
     description:
       'Providing top-tier technical support for Bluehost customers, focusing on domain setup, website management, and troubleshooting complex issues to ensure high customer satisfaction.',
